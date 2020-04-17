@@ -125,6 +125,13 @@ namespace lab4
                             computador.encender_todo(empaque, recepcion, almacenamiento, ensamblaje, verificacion);
                             Console.WriteLine("");
                             Console.Write("Ahora procederemos a funcionar las máquinas desde 0");
+                            piezas.Clear();
+                            pieza = 1;
+                            empaque.restaurar();
+                            recepcion.restaurar();
+                            almacenamiento.restaurar();
+                            ensamblaje.restaurar();
+                            verificacion.restaurar();
                         }
                         else if (resp == "b")
                         {
@@ -140,11 +147,11 @@ namespace lab4
                     {
                         piezas.Clear();
                         pieza = 1;
-                        empaque.memoria_acumulada = 0;
-                        recepcion.memoria_acumulada = 0;
-                        almacenamiento.memoria_acumulada = 0;
-                        ensamblaje.memoria_acumulada = 0;
-                        verificacion.memoria_acumulada = 0;
+                        empaque.restaurar();
+                        recepcion.restaurar();
+                        almacenamiento.restaurar();
+                        ensamblaje.restaurar();
+                        verificacion.restaurar();
                     }
                     
                     while (memory != 0)
